@@ -1,0 +1,209 @@
+* {
+  font-family: sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0a2a4e;
+  font-weight: 400;
+}
+
+dl {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  padding: 0;
+}
+
+dt {
+}
+dd {
+  font-size:  0.8rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.layout {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.sidebar {
+  background-color: #0a2a4e;
+  color: #ffffff;
+  padding: 1rem;
+
+  width: 35vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.sidebar-header {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 1rem ;
+}
+
+.sidebar a {
+  color: #c4dcf7;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.oss-projects {
+  flex: 0 1 auto;
+  justify-content: flex-end;
+  overflow: auto;
+}
+
+.main {
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #eee;
+  padding: 0.5rem;
+}
+
+.header-name-and-title {
+  flex: 1;
+}
+
+.header-summary {
+  padding-right: 1rem;
+}
+.header-summary div:nth-of-type(1) {
+  padding-left: 1.5rem;
+}
+.header-summary div:nth-of-type(2) {
+  margin: 0.125rem 0;
+}
+.header-summary div:nth-of-type(3) {
+  text-align: right;
+  padding-right: 1.5rem;
+}
+
+.profile-image {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 2.5rem;
+  margin-right: 1rem;
+}
+
+.header-name {
+  flex-grow: 1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.header-title {
+  font-size: 1.25rem;
+}
+
+.experience {
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.contact {
+  flex: 1 0 auto;
+  margin-bottom: 1rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+}
+
+.experience-position {
+  margin-bottom: 1rem;
+}
+
+.experience-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.experience-company {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+.experience-time {
+}
+.experience-title {
+  flex: 1;
+}
+
+.sub-list {
+  list-style: circle;
+  padding-left: 1rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.15rem;
+}
+
+.education {
+  flex: 0 0 auto;
+  background: #eee;
+  padding: 0.5rem;
+}
+.education-college {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+.education-degree {
+  font-size: 1rem;
+}
