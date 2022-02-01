@@ -15,6 +15,10 @@ body {
   padding: 0;
 }
 
+strong {
+  font-weight: normal;
+}
+
 a {
   color: #0a2a4e;
   font-weight: 400;
@@ -31,14 +35,6 @@ ul {
 }
 li {
   padding: 0;
-}
-
-dt {
-}
-dd {
-  font-size:  0.8rem;
-  margin-left: 1rem;
-  margin-bottom: 0.5rem;
 }
 
 h1,
@@ -72,7 +68,8 @@ h6 {
   color: #ffffff;
   padding: 1rem;
 
-  width: 35vw;
+  flex: 1 1 auto;
+  flex-basis: 35vw;
 
   display: flex;
   flex-direction: column;
@@ -89,7 +86,10 @@ h6 {
 .sidebar a {
   color: #c4dcf7;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 100;
+}
+.sidebar a:hover {
+  text-decoration: underline;
 }
 
 .oss-projects {
@@ -98,8 +98,19 @@ h6 {
   overflow: auto;
 }
 
+.oss-projects dt {
+}
+.oss-projects dd {
+  font-size:  0.8rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
 .main {
-  width: 65vw;
+  flex: 1 1 auto;
+  flex-basis: 65vw;
+
   display: flex;
   flex-direction: column;
 }
@@ -120,6 +131,7 @@ h6 {
 
 .header-summary {
   padding-right: 1rem;
+  font-style: italic;
 }
 .header-summary div:nth-of-type(1) {
   padding-left: 1.5rem;
@@ -150,7 +162,7 @@ h6 {
 }
 
 .experience {
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   flex: 1 1 auto;
   overflow: auto;
 }
@@ -160,12 +172,25 @@ h6 {
   margin-bottom: 1rem;
 }
 
+.contact-list {
+  background: #224164;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
 .contact-list li {
   margin-bottom: 0.5rem;
 }
+.contact-list:last-of-type {
+  margin-bottom: 0;
+}
 
 .experience-position {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+.experience-position:last-of-type {
+  border-bottom: none;
 }
 
 .experience-header {
@@ -179,6 +204,14 @@ h6 {
   font-size: 1.25rem;
   margin-right: 0.5rem;
 }
+
+.experience-company a {
+  text-decoration: none;
+}
+.experience-company a:hover {
+  text-decoration: underline;
+}
+
 .experience-time {
 }
 .experience-title {
