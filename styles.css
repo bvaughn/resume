@@ -39,13 +39,11 @@ li {
 }
 
 .layout {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 .icon {
@@ -59,19 +57,17 @@ li {
   color: #ffffff;
   padding: 1rem;
 
-  flex: 1 1 auto;
-  flex-basis: 35vw;
+  flex: 0 0 35vw;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 1rem;
 }
 
 .sidebar-header {
   font-weight: 400;
   font-size: 1.25rem;
-  margin-bottom: 1rem ;
+  margin-bottom: 1rem;
 }
 
 .sidebar a {
@@ -89,28 +85,27 @@ li {
   overflow: auto;
 }
 
-.oss-projects dt {
-}
 .oss-projects dd {
   font-size:  0.8rem;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
-  white-space: nowrap;
 }
 
 .main {
-  flex: 1 1 auto;
-  flex-basis: 65vw;
+  flex: 0 0 65vw;
 
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .header {
   flex: 0 0 auto;
   display: flex;
+  gap: 1ch;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
   background: #eee;
   padding: 0.5rem;
@@ -139,7 +134,6 @@ li {
   height: 5rem;
   width: 5rem;
   border-radius: 2.5rem;
-  margin-right: 1rem;
 }
 
 .header-name {
@@ -147,9 +141,11 @@ li {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
+  white-space: nowrap;
 }
 .header-title {
   font-size: 1.25rem;
+  white-space: nowrap;
 }
 
 .experience {
@@ -170,6 +166,7 @@ li {
 }
 .contact-list li {
   margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 .contact-list:last-of-type {
   margin-bottom: 0;
@@ -230,4 +227,55 @@ li {
 }
 .education-degree {
   font-size: 1rem;
+}
+
+@media (max-width: 800px) and (min-width: 501px) {
+  .github-prefix {
+    display: none;
+  }
+
+  .contact-list {
+    font-size: 0.85rem;
+  }
+
+  .oss-projects dt {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-name {
+    font-size: 1.25rem;
+    text-align: right;
+  }
+  .header-title {
+    font-size: 1rem;
+    text-align: right;
+  }
+
+  .profile-image {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .header-summary {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+    height: auto;
+  }
+
+  .contact {
+    order: 2;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    flex: 0 0 auto;
+  }
+
+  .oss-projects {
+    order: 1;
+    flex: 0 0 auto;
+  }
 }
