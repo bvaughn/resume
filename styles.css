@@ -149,9 +149,15 @@ li {
 }
 
 .experience {
-  padding: 0.5rem 0.75rem;
   flex: 1 1 auto;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.experience-list {
+  flex: 1 0 auto;
 }
 
 .contact {
@@ -174,7 +180,7 @@ li {
 
 .experience-position {
   margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
   border-bottom: 1px solid #eee;
 }
 .experience-position:last-of-type {
@@ -241,6 +247,10 @@ li {
   .oss-projects dt {
     font-size: 0.85rem;
   }
+
+  .header-summary {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
@@ -260,6 +270,17 @@ li {
 
   .header-summary {
     display: none;
+  }
+
+  .education-college,
+  .experience-company,
+  .header-title,
+  .sidebar-header {
+    font-size: 1rem;
+  }
+
+  .experience-title {
+    font-size: 0.85rem;
   }
 
   .layout {
