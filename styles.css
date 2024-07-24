@@ -121,15 +121,21 @@ li {
 }
 
 .download-link {
-  color: #0a2a4e;
+  color: #224164;
+  text-decoration: none;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
 }
 .download-link:hover {
-  color: #224164;
+  color: #0a2a4e;
+  text-decoration: underline;
 }
 
 .download-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
   fill: currentColor;
 }
 
@@ -142,7 +148,7 @@ li {
 .header-name {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   flex-grow: 1;
   font-size: 1.5rem;
   font-weight: 600;
