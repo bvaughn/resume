@@ -57,7 +57,7 @@ li {
   color: #ffffff;
   padding: 1rem;
 
-  flex: 0 0 35vw;
+  flex: 1 0 auto;
 
   display: flex;
   flex-direction: column;
@@ -86,13 +86,13 @@ li {
 }
 
 .oss-projects dd {
-  font-size:  0.8rem;
+  font-size: 0.8rem;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .main {
-  flex: 0 0 65vw;
+  flex: 0 1 65vw;
 
   display: flex;
   flex-direction: column;
