@@ -9,14 +9,20 @@
     <section class="main">
       <header class="header">
         <img class="profile-image" src="./profile.png" />
-        <div class="header-name-and-title">
-          <div class="header-name">Brian Vaughn</div>
-          <div class="header-title">Engineer</div>
-        </div>
+        <section class="header-name-and-title">
+          <div class="header-name">
+            Brian Vaughn
+            <a class="download-link" href="/resume.pdf">
+              <svg class="download-icon" title="Download resume" viewBox="0 0 24 24">
+                <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3m-3 11H8v-5h8zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-1-9H6v4h12z"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="header-title">Software engineer</div>
+        </section>
         <section class="header-summary">
-          <div>I build <strong>tools</strong></div>
-          <div>that help make other engineers</div>
-          <div><strong>more productive</strong></div>
+          <div>I build <strong>tools</strong> that make</div>
+          <div>engineers <strong>more productive</strong></div>
         </section>
       </header>
       <section class="experience">
@@ -44,9 +50,6 @@
               <li>
                 Implemented Suspense-based data loading and cache-management
               </li>
-              <li>
-                Created <a href="https://github.com/bvaughn/react-resizable-panels">react-resizable-panels</a>, <a href="https://github.com/bvaughn/suspense">suspense</a>, and <a href="https://github.com/bvaughn/use-context-menu">use-context-menu</a> libraries to support business needs
-              </li>
             </ul>
           </li>
           <li class="experience-position">
@@ -61,10 +64,7 @@
             </div>
             <ul class="sub-list">
               <li>
-                <a href="https://facebook.github.io/react/">React JS</a> core team
-              </li>
-              <li>
-                Developer Tooling sub-team lead
+                <a href="https://facebook.github.io/react/">React JS</a> core team; Developer Tooling sub-team lead
               </li>
               <li>
                 Built and maintain the <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React Developer Tools</a> (with several million weekly active users)
@@ -87,9 +87,6 @@
             <ul class="sub-list">
               <li>Front-end lead for Developer Console UI</li>
               <li>Lead rewrite fromAngularJS to React + Redux</li>
-              <li>
-                Created <a href="https://github.com/bvaughn/react-virtualized">react-virtualized</a> and <a href="https://github.com/bvaughn/redux-search">redux-search</a> for new site
-              </li>
             </ul>
           </li>
           <li class="experience-position">
@@ -123,10 +120,7 @@
             </div>
             <ul class="sub-list">
               <li>
-                Lead small team to rewrite Recurly front-end from Ruby on Rails to Angular JS
-              </li>
-              <li>
-                Created <a href="http://bvaughn.github.io/angular-form-for/">Angular <code>formFor</code></a> library for new site
+                Lead Recurly front-end rewrite from Ruby on Rails to Angular JS
               </li>
             </ul>
           </li>
@@ -142,10 +136,7 @@
             </div>
             <ul class="sub-list">
               <li>
-                Created and maintained web and mobile frontends
-              </li>
-              <li>
-                User interface designer
+                Lead engineer for web and mobile frontends
               </li>
             </ul>
           </li>
@@ -189,10 +180,7 @@
             </div>
             <ul class="sub-list">
               <li>
-                Engineer working primarily with PHP and Java applications
-              </li>
-              <li>
-                UI designer creating marketing materials and business cards
+                Contract work (PHP, Java, and ActionScript)
               </li>
             </ul>
           </li>
@@ -245,8 +233,8 @@
                 d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"
               />
             </svg>
-            <a href="mailto:brian.david.vaughn@gmail.com">
-              brian.david.vaughn@gmail.com
+            <a href="mailto:me@bvaughn.me">
+              me@bvaughn.me
             </a>
           </li>
           <li>
@@ -387,5 +375,7 @@
         </dl>
       </section>
     </section>
+
+    <script src="script.js" type="text/JavaScript"></script>
   </body>
 </html>
