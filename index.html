@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brian Vaughn: Resume</title>
   </head>
   <body class="layout">
@@ -10,20 +10,23 @@
       <header class="header">
         <img class="profile-image" src="./profile.png" />
         <section class="header-name-and-title">
-          <div class="header-name">
-            Brian Vaughn
-            <a class="download-link" href="/resume.pdf">
-              <svg class="download-icon" title="Download resume" viewBox="0 0 24 24">
-                <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2m-1 8V6h2v4h3l-4 4-4-4zm6 7H7v-2h10z"></path>
-              </svg>
-              download
-            </a>
+          <div class="header-name">Brian Vaughn</a>
           </div>
           <div class="header-title">Software engineer</div>
         </section>
         <section class="header-summary">
           <div>I build <strong>tools</strong> that make</div>
           <div>engineers <strong>more productive</strong></div>
+        </section>
+        <section class="header-contact">
+          <!-- Content synced via script.js -->
+          <ul class="header-contact-list">
+            <li data-test-location="header" data-test-name="contact-location"></li>
+            <li data-test-location="header" data-test-name="contact-phone"></li>
+            <li data-test-location="header" data-test-name="contact-email"></li>
+            <li data-test-location="header" data-test-name="contact-github"></li>
+            <li data-test-location="header" data-test-name="contact-pdf"></li>
+          </ul>
         </section>
       </header>
       <section class="experience">
@@ -33,20 +36,23 @@
               <div class="experience-company">
                 <a href="https://www.replay.io/">Replay</a>
               </div>
-              <div class="experience-title">
-                Engineer, frontend lead
-              </div>
+              <div class="experience-title">Engineer, frontend lead</div>
               <time class="experience-time">2022 - 2024</time>
             </div>
             <ul class="sub-list">
               <li>
-                <a href="https://github.com/RecordReplay/devtools">Replay.io devtools</a> team
+                <a href="https://github.com/RecordReplay/devtools"
+                  >Replay.io devtools</a
+                >
+                team
               </li>
               <li>
-                Wrote major DevTools components (console, object inspector, log points panel, source code viewer)
+                Wrote major DevTools components (console, object inspector, log
+                points panel, source code viewer)
               </li>
               <li>
-                Wrote major social components (library/dashboard page, reporting, commenting)
+                Wrote major social components (library/dashboard page,
+                reporting, commenting)
               </li>
               <li>
                 Implemented Suspense-based data loading and cache-management
@@ -58,21 +64,23 @@
               <div class="experience-company">
                 <a href="https://www.facebook.com">Facebook</a>
               </div>
-              <div class="experience-title">
-                Staff engineer, tech lead
-              </div>
+              <div class="experience-title">Staff engineer, tech lead</div>
               <time class="experience-time">2016 - 2022</time>
             </div>
             <ul class="sub-list">
               <li>
-                <a href="https://facebook.github.io/react/">React JS</a> core team; Developer Tooling sub-team lead
+                <a href="https://facebook.github.io/react/">React JS</a> core
+                team; Developer Tooling sub-team lead
               </li>
               <li>
-                Built and maintain the <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React Developer Tools</a> (with several million weekly active users)
+                Built and maintain the
+                <a
+                  href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en"
+                  >React Developer Tools</a
+                >
+                (with several million weekly active users)
               </li>
-              <li>
-                ReactJS blog author and keynote speaker
-              </li>
+              <li>ReactJS blog author and keynote speaker</li>
             </ul>
           </li>
           <li class="experience-position">
@@ -80,9 +88,7 @@
               <div class="experience-company">
                 <a href="https://www.treasuredata.com/">Treasure Data</a>
               </div>
-              <div class="experience-title">
-                Engineer, front end lead
-              </div>
+              <div class="experience-title">Engineer, front end lead</div>
               <time class="experience-time">2015 - 2016</time>
             </div>
             <ul class="sub-list">
@@ -95,17 +101,21 @@
               <div class="experience-company">
                 <a href="https://www.google.com">Google</a>
               </div>
-              <div class="experience-title">
-                Senior engineer
-              </div>
+              <div class="experience-title">Senior engineer</div>
               <time class="experience-time">2014 - 2015</time>
             </div>
             <ul class="sub-list">
               <li>
-                <a href="https://cloud.google.com/">Google Cloud Platform</a> web console UI
+                <a href="https://cloud.google.com/">Google Cloud Platform</a>
+                web console UI
               </li>
               <li>
-                Contributed to <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.maps&amp;hl=en">Maps Android</a> Material UI rewrite
+                Contributed to
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.google.android.apps.maps&amp;hl=en"
+                  >Maps Android</a
+                >
+                Material UI rewrite
               </li>
             </ul>
           </li>
@@ -114,9 +124,7 @@
               <div class="experience-company">
                 <a href="https://recurly.com/">Recurly</a>
               </div>
-              <div class="experience-title">
-                Engineer, front end lead
-              </div>
+              <div class="experience-title">Engineer, front end lead</div>
               <time class="experience-time">2014 - 2014</time>
             </div>
             <ul class="sub-list">
@@ -130,15 +138,11 @@
               <div class="experience-company">
                 <a href="https://www.pickarious.com/">Pickarious</a>
               </div>
-              <div class="experience-title">
-                CTO and founder
-              </div>
+              <div class="experience-title">CTO and founder</div>
               <time class="experience-time">2013 - 2014</time>
             </div>
             <ul class="sub-list">
-              <li>
-                Lead engineer for web and mobile frontends
-              </li>
+              <li>Lead engineer for web and mobile frontends</li>
             </ul>
           </li>
           <li class="experience-position">
@@ -152,37 +156,23 @@
               <time class="experience-time">2005 - 2014</time>
             </div>
             <ul class="sub-list">
-              <li>
-                Director of engineering (2014)
-              </li>
+              <li>Director of engineering (2014)</li>
               <li>
                 Frontend lead for Advanced English for Business product (2013)
               </li>
-              <li>
-                Frontend lead for Rosetta Stone mobile Android (2012)
-              </li>
-              <li>
-                Senior Engineer R&D "labs" (2010-2011)
-              </li>
-              <li>
-                Engineer on Rosetta Stone (CD) and TOTALe (web)
-              </li>
+              <li>Frontend lead for Rosetta Stone mobile Android (2012)</li>
+              <li>Senior Engineer R&D "labs" (2010-2011)</li>
+              <li>Engineer on Rosetta Stone (CD) and TOTALe (web)</li>
             </ul>
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
-                Vital Assets Inc
-              </div>
-              <div class="experience-title">
-                Web developer
-              </div>
+              <div class="experience-company">Vital Assets Inc</div>
+              <div class="experience-title">Web developer</div>
               <time class="experience-time">2004 - 2005</time>
             </div>
             <ul class="sub-list">
-              <li>
-                Contract work (PHP, Java, and ActionScript)
-              </li>
+              <li>Contract work (PHP, Java, and ActionScript)</li>
             </ul>
           </li>
         </ul>
@@ -200,52 +190,65 @@
               Received highest department award, Academic Excellence in Digital
               Media.
             </li>
-            <!--<li>Cumulative GPA of 3.704.</li>-->
           </ul>
         </footer>
       </section>
-      </section>
+    </section>
     <section class="sidebar">
-      <section class="contact">
-        <!--<div class="sidebar-header">Contact</div>-->
-        <ul class="contact-list">
-          <li>
+      <section class="sidebar-contact">
+        <ul class="sidebar-contact-list">
+          <li data-test-location="sidebar" data-test-name="contact-location">
             <svg class="icon" viewBox="0 0 24 24">
               <path
                 fill="currentColor"
                 d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"
               />
             </svg>
-            Brooklyn, NY
+            <span>Brooklyn, NY</span>
           </li>
-          <li>
-            <svg class="icon" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"
-              />
-            </svg>
-            <a href="tel:5402465223">(540) 246-5223</a>
-          </li>
-          <li>
-            <svg class="icon" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"
-              />
-            </svg>
-            <a href="mailto:me@bvaughn.me">
-              me@bvaughn.me
+          <li data-test-location="sidebar" data-test-name="contact-phone">
+            <a href="tel:5402465223">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"
+                />
+              </svg>
+              <span>(540) 246-5223</span>
             </a>
           </li>
-          <li>
-            <svg class="icon" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
-              />
-            </svg>
-            <a href="https://github.com/bvaughn">github.com/bvaughn</a>
+          <li data-test-location="sidebar" data-test-name="contact-email">
+            <a href="mailto:me@bvaughn.me">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"
+                />
+              </svg>
+              <span>me@bvaughn.me</span>
+            </a>
+          </li>
+          <li data-test-location="sidebar" data-test-name="contact-github">
+            <a href="https://github.com/bvaughn">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
+                />
+              </svg>
+              <span>github.com/bvaughn</span>
+            </a>
+          </li>
+          <li data-test-location="sidebar" data-test-name="contact-pdf">
+            <a href="/resume.pdf" title="Download resume">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2m-1 8V6h2v4h3l-4 4-4-4zm6 7H7v-2h10z"
+                ></path>
+              </svg>
+              <span>resume <small>PDF</small></span>
+            </a>
           </li>
         </ul>
       </section>
@@ -254,125 +257,156 @@
 
         <dl>
           <dt>
-            <a href="https://github.com/bvaughn/suspense"><span class="github-prefix">github.com/</span>bvaughn/suspense</a>
+            <a href="https://github.com/bvaughn/suspense"
+              ><span class="github-prefix">github.com/</span>bvaughn/suspense</a
+            >
+          </dt>
+          <dd>APIs to simplify data loading and caching with React Suspense</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/react-resizable-panels"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-resizable-panels</a
+            >
+          </dt>
+          <dd>React components for resizable panels</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/use-context-menu"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/use-context-menu</a
+            >
+          </dt>
+          <dd>React components for displaying configurable context menus</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/react-window"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-window</a
+            >
+          </dt>
+          <dt>
+            <a href="https://github.com/bvaughn/react-virtualized"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-virtualized</a
+            >
+          </dt>
+          <dd>React components for rendering large lists and tabular data</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/planner"
+              ><span class="github-prefix">github.com/</span>bvaughn/planner</a
+            >
+          </dt>
+          <dd>Interactive Canvas-based planning tool</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/progress-estimator"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/progress-estimator</a
+            >
+          </dt>
+          <dd>Animated progress bar that estimates duration of ClI tasks</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/js-search"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/js-search</a
+            >
+          </dt>
+          <dt>
+            <a href="https://github.com/bvaughn/js-worker-search"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/js-worker-search</a
+            >
+          </dt>
+          <dt>
+            <a href="https://github.com/bvaughn/redux-search"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/redux-search</a
+            >
+          </dt>
+          <dd>Client-side search utilities for JavaScript and JSON data</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/react-error-boundary"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-error-boundary</a
+            >
+          </dt>
+          <dd>Reusable React error boundary component</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/react-flame-graph"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-flame-graph</a
+            >
           </dt>
           <dd>
-            APIs to simplify data loading and caching with React Suspense
+            Visualizes profiling data; used in the React DevTools Profiler
           </dd>
 
           <dt>
-            <a href="https://github.com/bvaughn/react-resizable-panels"><span class="github-prefix">github.com/</span>bvaughn/react-resizable-panels</a>
+            <a href="https://github.com/bvaughn/react-highlight-words"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-highlight-words</a
+            >
           </dt>
-          <dd>
-            React components for resizable panels
-          </dd>
+          <dt>
+            <a href="https://github.com/bvaughn/highlight-words-core"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/highlight-words-core</a
+            >
+          </dt>
+          <dd>React components for highlighting inline search matches</dd>
 
           <dt>
-            <a href="https://github.com/bvaughn/use-context-menu"><span class="github-prefix">github.com/</span>bvaughn/use-context-menu</a>
+            <a href="https://github.com/bvaughn/react-virtualized-select"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-virtualized-select</a
+            >
           </dt>
-          <dd>
-            React components for displaying configurable context menus
-          </dd>
+          <dt>
+            <a
+              href="https://github.com/bvaughn/react-select-fast-filter-options"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-select-fast-filter-options</a
+            >
+          </dt>
+          <dd>Fast React dropdown menus with custom UIs</dd>
 
           <dt>
-            <a href="https://github.com/bvaughn/react-window"><span class="github-prefix">github.com/</span>bvaughn/react-window</a>
+            <a href="https://github.com/bvaughn/react-presents"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/react-presents</a
+            >
           </dt>
-          <dt>
-            <a href="https://github.com/bvaughn/react-virtualized"><span class="github-prefix">github.com/</span>bvaughn/react-virtualized</a>
-          </dt>
-          <dd>
-            React components for rendering large lists and tabular data
-          </dd>
+          <dd>React slideshow framework</dd>
 
           <dt>
-            <a href="https://github.com/bvaughn/planner"><span class="github-prefix">github.com/</span>bvaughn/planner</a>
+            <a href="https://github.com/bvaughn/task-runner"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/task-runner</a
+            >
           </dt>
-          <dd>
-            Interactive Canvas-based planning tool
-          </dd>
+          <dd>Utilities to simplify dependency management for async tasks</dd>
 
           <dt>
-            <a href="https://github.com/bvaughn/progress-estimator"><span class="github-prefix">github.com/</span>bvaughn/progress-estimator</a>
-          </dt>
-          <dd>
-            Animated progress bar that estimates duration of ClI tasks
-          </dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/js-search"><span class="github-prefix">github.com/</span>bvaughn/js-search</a>
-          </dt>
-          <dt>
-            <a href="https://github.com/bvaughn/js-worker-search"><span class="github-prefix">github.com/</span>bvaughn/js-worker-search</a>
-          </dt>
-          <dt>
-            <a href="https://github.com/bvaughn/redux-search"><span class="github-prefix">github.com/</span>bvaughn/redux-search</a>
-          </dt>
-          <dd>
-            Client-side search utilities for JavaScript and JSON data
-          </dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/react-error-boundary"><span class="github-prefix">github.com/</span>bvaughn/react-error-boundary</a>
-          </dt>
-          <dd>
-            Reusable React error boundary component
-          </dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/react-flame-graph"><span class="github-prefix">github.com/</span>bvaughn/react-flame-graph</a>
-          </dt>
-          <dd>
-            Visualizes profiling data;
-            used in the React DevTools Profiler
-          </dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/react-highlight-words"><span class="github-prefix">github.com/</span>bvaughn/react-highlight-words</a>
-          </dt>
-          <dt>
-            <a href="https://github.com/bvaughn/highlight-words-core"><span class="github-prefix">github.com/</span>bvaughn/highlight-words-core</a>
-          </dt>
-          <dd>
-            React components for highlighting inline search matches
-          </dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/react-virtualized-select"><span class="github-prefix">github.com/</span>bvaughn/react-virtualized-select</a>
-          </dt>
-          <dt>
-            <a href="https://github.com/bvaughn/react-select-fast-filter-options"><span class="github-prefix">github.com/</span>bvaughn/react-select-fast-filter-options</a>
-          </dt>
-          <dd>
-            Fast React dropdown menus with custom UIs
-          </dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/react-presents"><span class="github-prefix">github.com/</span>bvaughn/react-presents</a>
-          </dt>
-          <dd>
-            React slideshow framework
-          </dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/task-runner"><span class="github-prefix">github.com/</span>bvaughn/task-runner</a>
-          </dt>
-          <dd>
-            Utilities to simplify dependency management for async tasks
-          </dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/angular-form-for"><span class="github-prefix">github.com/</span>bvaughn/angular-form-for</a>
+            <a href="https://github.com/bvaughn/angular-form-for"
+              ><span class="github-prefix">github.com/</span
+              >bvaughn/angular-form-for</a
+            >
           </dt>
           <dd>
             Define complex HTML forms with client or server-side validations
           </dd>
 
           <dt>
-            <a href="https://sourceforge.net/projects/nennius">sourceforge.net/projects/nennius</a>
+            <a href="https://sourceforge.net/projects/nennius"
+              >sourceforge.net/projects/nennius</a
+            >
           </dt>
-          <dd>
-            MVC framework for building complex CRUD applications in PHP
-          </dd>
+          <dd>MVC framework for building complex CRUD applications in PHP</dd>
         </dl>
       </section>
     </section>

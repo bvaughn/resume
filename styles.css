@@ -47,9 +47,8 @@ li {
 }
 
 .icon {
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
+  width: 1em;
+  height: 1em;
 }
 
 .sidebar {
@@ -107,7 +106,7 @@ li {
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  background: #eee;
+  background-color: #eee;
   padding: 0.5rem;
 }
 
@@ -118,6 +117,41 @@ li {
 .header-summary {
   text-align: right;
   font-style: italic;
+}
+
+.header-contact {
+  display: none;
+  font-size: 0.9rem;
+}
+
+.header-contact .icon {
+  color: #000;
+}
+
+.header-contact-list {
+  padding: 0;
+}
+.header-contact-list li {
+  margin-bottom: 0.25em;
+  white-space: nowrap;
+}
+.header-contact-list li,
+.header-contact-list li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.header-contact-list li:last-of-type {
+  margin-bottom: 0;
+}
+
+.header-contact a {
+  text-decoration: none;
+}
+.header-contact a:hover {
+  text-decoration: underline;
 }
 
 .download-link {
@@ -172,21 +206,34 @@ li {
   flex: 1 0 auto;
 }
 
-.contact {
+.sidebar-contact {
   flex: 1 0 auto;
   margin-bottom: 1rem;
 }
 
-.contact-list {
-  background: #224164;
+.sidebar-contact .icon {
+  color: #fff;
+}
+
+.sidebar-contact-list {
+  background-color: #224164;
   padding: 0.5rem;
+}
+.sidebar-contact-list {
   border-radius: 0.25rem;
 }
-.contact-list li {
+.sidebar-contact-list li {
   margin-bottom: 0.25rem;
   white-space: nowrap;
 }
-.contact-list li:last-of-type {
+.sidebar-contact-list li,
+.sidebar-contact-list li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sidebar-contact-list li:last-of-type {
   margin-bottom: 0;
 }
 
@@ -235,7 +282,7 @@ li {
 
 .education {
   flex: 0 0 auto;
-  background: #eee;
+  background-color: #eee;
   padding: 0.5rem;
 }
 .education-college {
@@ -245,4 +292,49 @@ li {
 }
 .education-degree {
   font-size: 1rem;
+}
+
+@media (max-width: 925px) {
+  .header-summary {
+    display: none;
+  }
+}
+
+@media (max-width: 725px) {
+  .layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .main,
+  .experience,
+  .sidebar {
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .header-contact {
+    display: block;
+  }
+
+  .download-link,
+  .sidebar-contact {
+    display: none;
+  }
+
+  .profile-image {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .header-name {
+    font-size: 1.25rem;
+  }
+
+  .header-title {
+    font-size: 1rem;
+  }
+}
+
+@media print {
 }
