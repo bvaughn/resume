@@ -8,7 +8,11 @@
   <body class="layout">
     <section class="main">
       <header class="header">
-        <img class="profile-image" src="./profile.png" />
+        <picture class="profile-image">
+          <source type="image/webp" srcset="./profile.webp">
+          <source type="image/jpeg" srcset="./profile.jpg">
+          <img alt="Photo of Brian Vaughn" class="profile-image" src="./profile.jpg">
+        </picture>
         <section class="header-name-and-title">
           <div class="header-name">Brian Vaughn</a>
           </div>
