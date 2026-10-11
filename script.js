@@ -1,9 +1,3 @@
-const url = new URL(window.location.href);
-if (url.searchParams.has("print")) {
-  const downloadLink = document.querySelector(".download-link");
-  downloadLink.style.display = "none";
-}
-
 function syncContactInfo(dataTestName) {
   const headerElement = document.querySelector(
     `[data-test-location="header"][data-test-name="${dataTestName}"]`
@@ -22,3 +16,10 @@ syncContactInfo("contact-phone");
 syncContactInfo("contact-email");
 syncContactInfo("contact-github");
 syncContactInfo("contact-pdf");
+
+const url = new URL(window.location.href);
+if (url.searchParams.has("print")) {
+  document
+    .querySelectorAll('[data-test-name="contact-pdf"]')
+    .forEach((element) => (element.style.display = "none"));
+}
