@@ -6,14 +6,27 @@
     <meta name="description" content="Resume site for Brian Vaughn">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brian Vaughn: Resume</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Brian Vaughn: Resume" />
+    <meta property="og:description" content="I build tools that make engineers more productive" />
+    <meta property="og:url" content="https://www.bvaughn.me/" />
+    <meta property="og:image" content="https://www.bvaughn.me/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body class="layout">
     <main class="main">
       <header class="header">
-        <picture class="profile-image">
-          <source type="image/jpeg" srcset="./profile.jpg">
-          <img alt="Photo of Brian Vaughn" class="profile-image" src="./profile.jpg">
-        </picture>
+        <img
+          alt="Photo of Brian Vaughn"
+          class="profile-image"
+          src="./profile.jpg"
+          width="240"
+          height="240"
+        />
         <section class="header-name-and-title">
           <h1 class="header-name">Brian Vaughn</h1>
           <div class="header-title">Software engineer</div>
@@ -21,16 +34,6 @@
         <section class="header-summary">
           <div>I build <strong>tools</strong> that make</div>
           <div>engineers <strong>more productive</strong></div>
-        </section>
-        <section class="header-contact">
-          <!-- Content synced via script.js -->
-          <ul class="header-contact-list">
-            <li data-test-location="header" data-test-name="contact-location"></li>
-            <li data-test-location="header" data-test-name="contact-phone"></li>
-            <li data-test-location="header" data-test-name="contact-email"></li>
-            <li data-test-location="header" data-test-name="contact-github"></li>
-            <li data-test-location="header" data-test-name="contact-pdf"></li>
-          </ul>
         </section>
       </header>
       <section class="experience">
@@ -84,14 +87,14 @@
           <li class="experience-position">
             <div class="experience-header">
               <h3 class="experience-company">
-                <a href="https://www.facebook.com">Facebook</a>
+                <a href="https://www.facebook.com">Facebook (Meta)</a>
               </h3>
               <div class="experience-title">Staff engineer, tech lead</div>
               <time class="experience-time">2016–2022</time>
             </div>
             <ul class="sub-list">
               <li>
-                <a href="https://facebook.github.io/react/">React</a> core
+                <a href="https://react.dev">React</a> core
                 team; Developer Tooling sub-team lead
               </li>
               <li>
@@ -221,7 +224,7 @@
       <section class="sidebar-contact">
         <h2 class="visually-hidden">Contact</h2>
         <ul class="sidebar-contact-list">
-          <li data-test-location="sidebar" data-test-name="contact-location">
+          <li data-test-name="contact-location">
             <svg class="icon" viewBox="0 0 24 24">
               <path
                 fill="currentColor"
@@ -230,18 +233,8 @@
             </svg>
             <span>Brooklyn, NY</span>
           </li>
-          <li data-test-location="sidebar" data-test-name="contact-phone">
-            <a href="tel:5402465223">
-              <svg class="icon" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"
-                />
-              </svg>
-              <span>(540) 246-5223</span>
-            </a>
-          </li>
-          <li data-test-location="sidebar" data-test-name="contact-email">
+          <!-- phone: added by print-pdf.sh -->
+          <li data-test-name="contact-email">
             <a href="mailto:me@bvaughn.me">
               <svg class="icon" viewBox="0 0 24 24">
                 <path
@@ -252,7 +245,7 @@
               <span>me@bvaughn.me</span>
             </a>
           </li>
-          <li data-test-location="sidebar" data-test-name="contact-github">
+          <li data-test-name="contact-github">
             <a href="https://github.com/bvaughn">
               <svg class="icon" viewBox="0 0 24 24">
                 <path
@@ -263,7 +256,7 @@
               <span>github.com/bvaughn</span>
             </a>
           </li>
-          <li data-test-location="sidebar" data-test-name="contact-pdf">
+          <li data-test-name="contact-pdf">
             <a href="/resume.pdf" title="Download resume">
               <svg class="icon" viewBox="0 0 24 24">
                 <path
@@ -281,160 +274,176 @@
 
         <dl>
           <dt>
-            <a href="https://github.com/bvaughn/suspense"
-              ><span class="github-prefix">github.com/</span>bvaughn/suspense</a
-            >
-          </dt>
-          <dd>APIs to simplify data loading and caching with React Suspense</dd>
-
-          <dt>
             <a href="https://github.com/bvaughn/react-resizable-panels"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-resizable-panels</a
+              ><span class="github-prefix">github.com/</span>bvaughn/react-resizable-panels</a
             >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >31M<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >5.4k<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
           </dt>
           <dd>React components for resizable panels</dd>
 
           <dt>
-            <a href="https://github.com/bvaughn/use-context-menu"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/use-context-menu</a
-            >
-          </dt>
-          <dd>React components for displaying configurable context menus</dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/react-window"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-window</a
-            >
-          </dt>
-          <dt>
-            <a href="https://github.com/bvaughn/react-virtualized"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-virtualized</a
-            >
-          </dt>
-          <dd>React components for rendering large lists and tabular data</dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/planner"
-              ><span class="github-prefix">github.com/</span>bvaughn/planner</a
-            >
-          </dt>
-          <dd>Interactive Canvas-based planning tool</dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/progress-estimator"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/progress-estimator</a
-            >
-          </dt>
-          <dd>Animated progress bar that estimates duration of CLI tasks</dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/js-search"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/js-search</a
-            >
-          </dt>
-          <dt>
-            <a href="https://github.com/bvaughn/js-worker-search"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/js-worker-search</a
-            >
-          </dt>
-          <dt>
-            <a href="https://github.com/bvaughn/redux-search"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/redux-search</a
-            >
-          </dt>
-          <dd>Client-side search utilities for JavaScript and JSON data</dd>
-
-          <dt>
             <a href="https://github.com/bvaughn/react-error-boundary"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-error-boundary</a
+              ><span class="github-prefix">github.com/</span>bvaughn/react-error-boundary</a
             >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >15M<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >8k<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
           </dt>
           <dd>Reusable React error boundary component</dd>
 
           <dt>
-            <a href="https://github.com/bvaughn/react-flame-graph"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-flame-graph</a
+            <a href="https://github.com/bvaughn/react-window"
+              ><span class="github-prefix">github.com/</span>bvaughn/react-window</a
             >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >6.5M<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >17k<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
           </dt>
-          <dd>
-            Visualizes profiling data; used in the React DevTools Profiler
-          </dd>
+          <dt>
+            <a href="https://github.com/bvaughn/react-virtualized"
+              ><span class="github-prefix">github.com/</span>bvaughn/react-virtualized</a
+            >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >1.7M<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >27k<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
+          </dt>
+          <dd>React components for rendering large lists and tabular data</dd>
 
           <dt>
             <a href="https://github.com/bvaughn/react-highlight-words"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-highlight-words</a
+              ><span class="github-prefix">github.com/</span>bvaughn/react-highlight-words</a
             >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >1M<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >2.3k<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
           </dt>
+          <dd>React component for highlighting inline search matches</dd>
+
           <dt>
-            <a href="https://github.com/bvaughn/highlight-words-core"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/highlight-words-core</a
+            <a href="https://github.com/bvaughn/js-search"
+              ><span class="github-prefix">github.com/</span>bvaughn/js-search</a
             >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >76k<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >2.2k<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
           </dt>
-          <dd>React components for highlighting inline search matches</dd>
+          <dd>Client-side search utilities for JavaScript and JSON data</dd>
+
+          <dt>
+            <a href="https://github.com/bvaughn/progress-estimator"
+              ><span class="github-prefix">github.com/</span>bvaughn/progress-estimator</a
+            >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >61k<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >2.1k<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
+          </dt>
+          <dd>Animated progress bar that estimates duration of CLI tasks</dd>
 
           <dt>
             <a href="https://github.com/bvaughn/react-virtualized-select"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-virtualized-select</a
+              ><span class="github-prefix">github.com/</span>bvaughn/react-virtualized-select</a
             >
-          </dt>
-          <dt>
-            <a
-              href="https://github.com/bvaughn/react-select-fast-filter-options"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-select-fast-filter-options</a
-            >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >22k<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >1.2k<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
           </dt>
           <dd>Fast React dropdown menus with custom UIs</dd>
 
           <dt>
-            <a href="https://github.com/bvaughn/react-presents"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/react-presents</a
+            <a href="https://github.com/bvaughn/react-flame-graph"
+              ><span class="github-prefix">github.com/</span>bvaughn/react-flame-graph</a
             >
+            <span class="oss-stats">
+              <span class="oss-stat" title="weekly npm downloads"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg
+                >5.6k<span class="visually-hidden"> weekly npm downloads</span></span
+              >
+              <span class="oss-stat" title="GitHub stars"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg
+                >400<span class="visually-hidden"> GitHub stars</span></span
+              >
+            </span>
           </dt>
-          <dd>React slideshow framework</dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/task-runner"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/task-runner</a
-            >
-          </dt>
-          <dd>Utilities to simplify dependency management for async tasks</dd>
-
-          <dt>
-            <a href="https://github.com/bvaughn/angular-form-for"
-              ><span class="github-prefix">github.com/</span
-              >bvaughn/angular-form-for</a
-            >
-          </dt>
-          <dd>
-            Define complex HTML forms with client or server-side validations
-          </dd>
-
-          <dt>
-            <a href="https://sourceforge.net/projects/nennius"
-              >sourceforge.net/projects/nennius</a
-            >
-          </dt>
-          <dd>MVC framework for building complex CRUD applications in PHP</dd>
+          <dd>Visualizes profiling data; used in the React DevTools Profiler</dd>
         </dl>
       </section>
     </aside>
 
-    <script src="script.js" defer></script>
   </body>
 </html>

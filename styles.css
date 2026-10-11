@@ -113,6 +113,32 @@ li {
   margin-bottom: 0.5rem;
 }
 
+.oss-projects dt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.75rem;
+}
+
+.oss-stats {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.oss-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+.oss-stat .icon {
+  color: #d4b872;
+}
+
 .main {
   flex: 0 1 65vw;
 
@@ -139,60 +165,6 @@ li {
 .header-summary {
   text-align: right;
   font-style: italic;
-}
-
-.header-contact {
-  display: none;
-  font-size: 0.9rem;
-}
-
-.header-contact .icon {
-  color: #000;
-}
-
-.header-contact-list {
-  padding: 0;
-}
-.header-contact-list li {
-  margin-bottom: 0.25em;
-  white-space: nowrap;
-}
-.header-contact-list li,
-.header-contact-list li a {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
-}
-.header-contact-list li:last-of-type {
-  margin-bottom: 0;
-}
-
-.header-contact a {
-  text-decoration: none;
-}
-.header-contact a:hover {
-  text-decoration: underline;
-}
-
-.download-link {
-  color: #224164;
-  text-decoration: none;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  gap: 0.125rem;
-}
-.download-link:hover {
-  color: #0a2a4e;
-  text-decoration: underline;
-}
-
-.download-icon {
-  width: 1rem;
-  height: 1rem;
-  fill: currentColor;
 }
 
 .profile-image {
@@ -325,25 +297,65 @@ li {
 }
 
 @media (max-width: 725px) {
+  /* Flatten main/sidebar so the contact list can sit in the header band */
   .layout {
-    flex-direction: column;
-    height: auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "header contact"
+      "experience experience"
+      "oss oss";
   }
 
   .main,
-  .experience,
   .sidebar {
-    height: auto;
-    flex: 0 0 auto;
+    display: contents;
   }
 
-  .header-contact {
-    display: block;
+  .header {
+    grid-area: header;
   }
 
-  .download-link,
+  .experience {
+    grid-area: experience;
+  }
+
   .sidebar-contact {
-    display: none;
+    grid-area: contact;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.5rem;
+    background-color: #eee;
+    color: #000;
+    font-size: 0.9rem;
+  }
+
+  .sidebar-contact .icon {
+    color: #000;
+  }
+
+  .sidebar .sidebar-contact a {
+    color: #0a2a4e;
+    font-weight: 400;
+  }
+
+  .sidebar-contact-list {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .sidebar-contact-list li,
+  .sidebar-contact-list li a {
+    justify-content: flex-end;
+  }
+
+  .oss-projects {
+    grid-area: oss;
+    background-color: #0a2a4e;
+    padding: 1rem;
   }
 
   .profile-image {
@@ -363,6 +375,27 @@ li {
     order: 1;
     flex-basis: 100%;
     margin-right: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+      "header"
+      "contact"
+      "experience"
+      "oss";
+  }
+
+  .sidebar-contact {
+    justify-content: flex-end;
+    padding-top: 0;
+  }
+
+  .github-prefix {
+    display: none;
   }
 }
 
