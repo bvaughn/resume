@@ -24,6 +24,11 @@ a {
   color: #0a2a4e;
   font-weight: 400;
 }
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 
 dl {
   margin: 0;
@@ -83,6 +88,10 @@ li {
   flex: 0 1 auto;
   justify-content: flex-end;
   overflow: auto;
+}
+
+.github-prefix {
+  opacity: 0.6;
 }
 
 .oss-projects dd {
@@ -240,8 +249,8 @@ li {
 
 .experience-position {
   margin-bottom: 0.25rem;
-  padding: 0.25rem 0.75rem;
-  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #ddd;
 }
 .experience-position:last-of-type {
   border-bottom: none;
@@ -249,8 +258,9 @@ li {
 
 .experience-header {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  align-items: center;
+  align-items: baseline;
 }
 
 .experience-company {
@@ -267,9 +277,13 @@ li {
 }
 
 .experience-time {
+  margin-left: auto;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 .experience-title {
-  flex: 1;
+  flex: 1 1 auto;
+  margin-right: 0.5rem;
 }
 
 .sub-list {
@@ -333,6 +347,12 @@ li {
 
   .header-title {
     font-size: 1rem;
+  }
+
+  .experience-title {
+    order: 1;
+    flex-basis: 100%;
+    margin-right: 0;
   }
 }
 
