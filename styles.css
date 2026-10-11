@@ -16,6 +16,23 @@ body {
   line-height: 1.45;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 strong {
   font-weight: normal;
 }
@@ -45,8 +62,7 @@ li {
 }
 
 .layout {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -66,7 +82,6 @@ li {
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .sidebar-header {
@@ -86,8 +101,6 @@ li {
 
 .oss-projects {
   flex: 0 1 auto;
-  justify-content: flex-end;
-  overflow: auto;
 }
 
 .github-prefix {
@@ -105,7 +118,6 @@ li {
 
   display: flex;
   flex-direction: column;
-  overflow: auto;
 }
 
 .header {
@@ -206,18 +218,16 @@ li {
 
 .experience {
   flex: 1 1 auto;
-  overflow: auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .experience-list {
-  flex: 1 0 auto;
+  flex: 0 0 auto;
 }
 
 .sidebar-contact {
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   margin-bottom: 1rem;
 }
 
@@ -356,5 +366,43 @@ li {
   }
 }
 
+@page {
+  size: letter;
+  margin: 0;
+}
+
 @media print {
+  html {
+    font-size: 12.5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .layout {
+    height: 100vh;
+  }
+
+  .main {
+    flex: 1 1 auto;
+  }
+
+  .sidebar {
+    flex: 0 0 36%;
+  }
+
+  .header-summary {
+    display: block;
+  }
+
+  .layout [data-test-name="contact-pdf"] {
+    display: none;
+  }
+
+  .github-prefix {
+    display: none;
+  }
+
+  .experience-position {
+    break-inside: avoid;
+  }
 }

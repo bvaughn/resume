@@ -16,10 +16,3 @@ syncContactInfo("contact-phone");
 syncContactInfo("contact-email");
 syncContactInfo("contact-github");
 syncContactInfo("contact-pdf");
-
-const url = new URL(window.location.href);
-if (url.searchParams.has("print")) {
-  document
-    .querySelectorAll('[data-test-name="contact-pdf"]')
-    .forEach((element) => (element.style.display = "none"));
-}

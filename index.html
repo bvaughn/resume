@@ -11,12 +11,11 @@
     <main class="main">
       <header class="header">
         <picture class="profile-image">
-          <source type="image/webp" srcset="./profile.webp">
           <source type="image/jpeg" srcset="./profile.jpg">
           <img alt="Photo of Brian Vaughn" class="profile-image" src="./profile.jpg">
         </picture>
         <section class="header-name-and-title">
-          <div class="header-name">Brian Vaughn</div>
+          <h1 class="header-name">Brian Vaughn</h1>
           <div class="header-title">Software engineer</div>
         </section>
         <section class="header-summary">
@@ -35,26 +34,30 @@
         </section>
       </header>
       <section class="experience">
+        <h2 class="visually-hidden">Experience</h2>
         <ul class="experience-list">
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
+              <h3 class="experience-company">
                 <a href="https://www.citadel.com/">Citadel</a>
-              </div>
+              </h3>
               <div class="experience-title">Software engineer</div>
               <time class="experience-time">2024–present</time>
             </div>
             <ul class="sub-list">
               <li>
-                Working on Citadel X
+                Software engineer on the Citadel X team
+              </li>
+              <li>
+                Responsible for building developer tools and (internal) React components
               </li>
             </ul>
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
+              <h3 class="experience-company">
                 <a href="https://www.replay.io/">Replay</a>
-              </div>
+              </h3>
               <div class="experience-title">Engineer, frontend lead</div>
               <time class="experience-time">2022–2024</time>
             </div>
@@ -80,9 +83,9 @@
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
+              <h3 class="experience-company">
                 <a href="https://www.facebook.com">Facebook</a>
-              </div>
+              </h3>
               <div class="experience-title">Staff engineer, tech lead</div>
               <time class="experience-time">2016–2022</time>
             </div>
@@ -104,9 +107,9 @@
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
+              <h3 class="experience-company">
                 <a href="https://www.treasuredata.com/">Treasure Data</a>
-              </div>
+              </h3>
               <div class="experience-title">Engineer, frontend lead</div>
               <time class="experience-time">2015–2016</time>
             </div>
@@ -117,9 +120,9 @@
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
+              <h3 class="experience-company">
                 <a href="https://www.google.com">Google</a>
-              </div>
+              </h3>
               <div class="experience-title">Senior engineer</div>
               <time class="experience-time">2014–2015</time>
             </div>
@@ -140,9 +143,9 @@
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
+              <h3 class="experience-company">
                 <a href="https://recurly.com/">Recurly</a>
-              </div>
+              </h3>
               <div class="experience-title">Engineer, frontend lead</div>
               <time class="experience-time">2014</time>
             </div>
@@ -154,9 +157,9 @@
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
+              <h3 class="experience-company">
                 <a href="https://www.pickarious.com/">Pickarious</a>
-              </div>
+              </h3>
               <div class="experience-title">CTO and founder</div>
               <time class="experience-time">2013–2014</time>
             </div>
@@ -166,9 +169,9 @@
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">
+              <h3 class="experience-company">
                 <a href="https://www.rosettastone.com/">Rosetta Stone</a>
-              </div>
+              </h3>
               <div class="experience-title">
                 Engineer, technical lead, Director of engineering
               </div>
@@ -186,7 +189,7 @@
           </li>
           <li class="experience-position">
             <div class="experience-header">
-              <div class="experience-company">Vital Assets Inc</div>
+              <h3 class="experience-company">Vital Assets Inc</h3>
               <div class="experience-title">Web developer</div>
               <time class="experience-time">2004–2005</time>
             </div>
@@ -196,10 +199,11 @@
           </li>
         </ul>
         <footer class="education">
-          <div class="education-college">
+          <h2 class="visually-hidden">Education</h2>
+          <h3 class="education-college">
             James Madison University
             <span class="education-degree">B.S. Digital Interactive Media</span>
-          </div>
+          </h3>
           <ul class="sub-list">
             <li>
               Graduated with honors (Magna cum laude) from the School of Media
@@ -215,6 +219,7 @@
     </main>
     <aside class="sidebar">
       <section class="sidebar-contact">
+        <h2 class="visually-hidden">Contact</h2>
         <ul class="sidebar-contact-list">
           <li data-test-location="sidebar" data-test-name="contact-location">
             <svg class="icon" viewBox="0 0 24 24">
@@ -272,7 +277,7 @@
         </ul>
       </section>
       <section class="oss-projects">
-        <div class="sidebar-header">Open Source</div>
+        <h2 class="sidebar-header">Open Source</h2>
 
         <dl>
           <dt>
@@ -430,6 +435,6 @@
       </section>
     </aside>
 
-    <script src="script.js" type="text/JavaScript"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
