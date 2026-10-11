@@ -16,4 +16,4 @@ Or from any browser (without the phone number): File > Print > Save as PDF (with
 ./update-stats.py
 ```
 
-Refreshes the weekly npm downloads and GitHub stars shown in the Open Source list. Set `GITHUB_TOKEN` if you hit GitHub's rate limit. Run it before `./print-pdf.sh` so the PDF has current numbers.
+Refreshes the weekly npm downloads and GitHub stars shown in the Open Source list, along with the totals above it. Set `GITHUB_TOKEN` if you hit GitHub's rate limit. Run it before `./print-pdf.sh` so the PDF has current numbers.

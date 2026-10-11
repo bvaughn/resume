@@ -3,7 +3,8 @@
 
 Each stat in the Open Source list is tagged with data-npm="<package>" or
 data-github="<owner>/<repo>"; this script fetches the current numbers and
-rewrites the displayed values in place.
+rewrites the displayed values in place. It also updates the summed totals
+tagged with data-total="npm" and data-total="github".
 
 Usage: ./update-stats.py
 Set GITHUB_TOKEN to avoid GitHub's unauthenticated rate limit (60 requests/hour).
@@ -23,6 +24,7 @@ STAT_PATTERN = re.compile(
     r'(data-(npm|github)="([^"]+)".*?</svg\s*>)([^<]*)(<span class="visually-hidden">)',
     re.S,
 )
+TOTAL_PATTERN = re.compile(r'(data-total="(npm|github)">)([^<]*)(<)')
 
 
 def fetch_json(url, headers=None):
@@ -53,12 +55,21 @@ def format_count(n):
     return str(n)
 
 
+def format_total(n):
+    """55_460_000 -> "55M+", 65_600 -> "65k+"; rounds down so the "+" stays true."""
+    for divisor, suffix in ((1_000_000, "M"), (1_000, "k")):
+        if n >= divisor:
+            return f"{n // divisor}{suffix}+"
+    return str(n)
+
+
 def main():
     with open(INDEX) as f:
         html = f.read()
 
     changes = []
     errors = []
+    totals = {"npm": 0, "github": 0}
 
     def replace(match):
         prefix, kind, source, old_value, suffix = match.groups()
@@ -67,6 +78,7 @@ def main():
         except Exception as error:
             errors.append(f"{kind} {source}: {error}")
             return match.group(0)
+        totals[kind] += count
         new_value = format_count(count)
         if new_value != old_value:
             changes.append(f"{kind} {source}: {old_value} -> {new_value}")
@@ -75,6 +87,18 @@ def main():
     updated, count = STAT_PATTERN.subn(replace, html)
     if count == 0:
         sys.exit("No tagged stats found in index.html")
+
+    # Totals are only accurate if every stat was fetched
+    if not errors:
+
+        def replace_total(match):
+            prefix, kind, old_value, suffix = match.groups()
+            new_value = format_total(totals[kind])
+            if new_value != old_value:
+                changes.append(f"total {kind}: {old_value} -> {new_value}")
+            return prefix + new_value + suffix
+
+        updated = TOTAL_PATTERN.sub(replace_total, updated)
 
     for line in changes:
         print(line)

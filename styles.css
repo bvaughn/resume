@@ -1,5 +1,10 @@
 * {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   font-weight: 300;
   box-sizing: border-box;
 }
@@ -78,7 +83,9 @@ li {
   color: #ffffff;
   padding: 1rem;
 
-  flex: 1 0 auto;
+  /* Fixed-ish width so long URLs can't squeeze the resume column */
+  flex: 0 0 clamp(17.5rem, 30vw, 26rem);
+  min-width: 0;
 
   display: flex;
   flex-direction: column;
@@ -101,6 +108,18 @@ li {
 
 .oss-projects {
   flex: 0 1 auto;
+}
+
+.oss-totals {
+  margin: -0.5rem 0 1rem;
+  font-size: 0.85rem;
+  color: #c4dcf7;
+}
+.oss-totals strong {
+  color: #fff;
+}
+.oss-total {
+  white-space: nowrap;
 }
 
 .github-prefix {
@@ -140,7 +159,8 @@ li {
 }
 
 .main {
-  flex: 0 1 65vw;
+  flex: 1 1 0;
+  min-width: 0;
 
   display: flex;
   flex-direction: column;
@@ -149,13 +169,14 @@ li {
 .header {
   flex: 0 0 auto;
   display: flex;
-  gap: 1ch;
+  gap: 1rem;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  background-color: #eee;
-  padding: 0.5rem;
+  background-color: #0a2a4e;
+  color: #fff;
+  padding: 1rem 1.25rem;
 }
 
 .header-name-and-title {
@@ -165,12 +186,19 @@ li {
 .header-summary {
   text-align: right;
   font-style: italic;
+  font-size: 1.1rem;
+  color: #c4dcf7;
+}
+.header-summary strong {
+  color: #d4b872;
+  font-weight: 500;
 }
 
 .profile-image {
-  height: 5rem;
-  width: 5rem;
-  border-radius: 2.5rem;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  border: 3px solid #c4dcf7;
 }
 
 .header-name {
@@ -178,13 +206,16 @@ li {
   align-items: center;
   gap: 1rem;
   flex-grow: 1;
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   margin-bottom: 0.25rem;
   white-space: nowrap;
 }
 .header-title {
   font-size: 1.25rem;
+  color: #c4dcf7;
   white-space: nowrap;
 }
 
@@ -196,6 +227,7 @@ li {
 
 .experience-list {
   flex: 0 0 auto;
+  padding: 0.5rem 0;
 }
 
 .sidebar-contact {
@@ -229,26 +261,46 @@ li {
   margin-bottom: 0;
 }
 
+/* Each position is a row on a vertical timeline, with dates in a left gutter */
 .experience-position {
-  margin-bottom: 0.25rem;
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #ddd;
+  display: grid;
+  grid-template-columns: 6.5rem auto 1fr;
+  column-gap: 1.25rem;
+  align-items: baseline;
+  padding: 0.35rem 1rem 0.6rem 0.5rem;
+  position: relative;
 }
-.experience-position:last-of-type {
-  border-bottom: none;
+/* Timeline rail and dot */
+.experience-position::before {
+  content: "";
+  position: absolute;
+  left: 7.6rem;
+  top: 0;
+  bottom: 0;
+  border-left: 2px solid #d5dde6;
+}
+.experience-position::after {
+  content: "";
+  position: absolute;
+  left: calc(7.6rem - 4px);
+  top: 0.95rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0a2a4e;
 }
 
 .experience-header {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  align-items: baseline;
+  display: contents;
 }
 
 .experience-company {
+  grid-column: 2;
+  grid-row: 1;
   font-weight: 400;
   font-size: 1.25rem;
   margin-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .experience-company a {
@@ -259,13 +311,19 @@ li {
 }
 
 .experience-time {
-  margin-left: auto;
+  grid-column: 1;
+  grid-row: 1;
+  text-align: right;
+  color: #555;
+  font-size: 0.9rem;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
 .experience-title {
-  flex: 1 1 auto;
+  grid-column: 3;
+  grid-row: 1;
   margin-right: 0.5rem;
+  color: #333;
 }
 
 .sub-list {
@@ -275,24 +333,129 @@ li {
   margin-top: 0.5rem;
   font-size: 0.9rem;
 }
+.experience-position .sub-list {
+  grid-column: 2 / -1;
+  grid-row: 2;
+  margin-top: 0.25rem;
+}
+
+/* Roles before 2014 are condensed under an "Earlier roles" heading */
+.experience-earlier-heading {
+  margin: 0.5rem 1rem 0.25rem 9rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ddd;
+  color: #0a2a4e;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.experience-position--earlier {
+  padding-top: 0.15rem;
+  padding-bottom: 0.25rem;
+}
+.experience-position--earlier::after {
+  background: #fff;
+  border: 2px solid #8fa3b8;
+  width: 8px;
+  height: 8px;
+  top: 0.6rem;
+}
+.experience-position--earlier .experience-company {
+  font-size: 1rem;
+}
+.experience-position--earlier .experience-title,
+.experience-position--earlier .experience-time {
+  font-size: 0.85rem;
+}
+/* Bullets become one run of text */
+.experience-position--earlier .sub-list {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin-left: 0;
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: #444;
+}
+.experience-position--earlier .sub-list li {
+  display: inline;
+}
+/* Separator trails each item so wrapped lines never start with one */
+.experience-position--earlier .sub-list li:not(:last-child)::after {
+  content: "\00a0\00a0·\00a0";
+}
 
 .education {
   flex: 0 0 auto;
-  background-color: #eee;
-  padding: 0.5rem;
+  margin-top: auto;
+  background-color: #224164;
+  color: #fff;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
 }
 .education-college {
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin-right: 0.5rem;
 }
 .education-degree {
+  display: block;
   font-size: 1rem;
+  color: #c4dcf7;
+}
+.education .sub-list {
+  margin-left: 0;
+  font-size: 0.8rem;
+}
+
+/* Quieter project list on screens, so the sidebar stays secondary */
+@media screen and (min-width: 726px) {
+  .sidebar-contact {
+    font-size: 0.9rem;
+  }
+
+  .sidebar-header {
+    font-size: 1.1rem;
+  }
+  .oss-projects dt {
+    font-size: 0.9rem;
+  }
+  .oss-projects dd {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .oss-stats {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media screen and (min-width: 726px) and (max-width: 1200px) {
+  .github-prefix {
+    display: none;
+  }
+}
+
+/* Narrow sidebar: stats always go on their own line, left-aligned, so every project looks the same */
+@media screen and (min-width: 726px) and (max-width: 1100px) {
+  .sidebar-contact {
+    font-size: 0.8rem;
+  }
+  .oss-stats {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
 }
 
 @media (max-width: 925px) {
+  /* Tagline wraps under the name */
   .header-summary {
-    display: none;
+    flex-basis: 100%;
+    text-align: left;
+  }
+  .header-summary div {
+    display: inline;
   }
 }
 
@@ -301,11 +464,12 @@ li {
   .layout {
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
       "header contact"
       "experience experience"
-      "oss oss";
+      "oss oss"
+      "edu edu";
   }
 
   .main,
@@ -319,6 +483,7 @@ li {
 
   .experience {
     grid-area: experience;
+    align-self: start;
   }
 
   .sidebar-contact {
@@ -326,19 +491,15 @@ li {
     display: flex;
     align-items: center;
     margin: 0;
-    padding: 0.5rem;
-    background-color: #eee;
-    color: #000;
+    padding: 1rem 1.25rem;
+    background-color: #0a2a4e;
+    color: #fff;
     font-size: 0.9rem;
   }
 
-  .sidebar-contact .icon {
-    color: #000;
-  }
-
   .sidebar .sidebar-contact a {
-    color: #0a2a4e;
-    font-weight: 400;
+    color: #c4dcf7;
+    font-weight: 300;
   }
 
   .sidebar-contact-list {
@@ -355,47 +516,115 @@ li {
   .oss-projects {
     grid-area: oss;
     background-color: #0a2a4e;
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .education {
+    grid-area: edu;
+    margin: 0;
+    border-radius: 0;
+    background-color: #0a2a4e;
+    padding: 0.5rem 1rem 1.5rem;
+  }
+  .education .education-college {
+    border-top: 1px solid #224164;
+    padding-top: 1rem;
   }
 
   .profile-image {
-    height: 3rem;
-    width: 3rem;
+    height: 4rem;
+    width: 4rem;
   }
 
   .header-name {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
 
   .header-title {
+    font-size: 1.1rem;
+  }
+
+  .header-summary {
     font-size: 1rem;
   }
 
+  /* Dates sit at the right of the company row; rail runs down the left edge */
+  .experience-position {
+    grid-template-columns: 1fr auto;
+    column-gap: 0.5rem;
+    padding: 0.4rem 1rem 0.5rem 2rem;
+  }
+  .experience-position::before {
+    left: 0.9rem;
+  }
+  .experience-position::after {
+    left: calc(0.9rem - 4px);
+    top: 0.9rem;
+  }
+  .experience-position--earlier::after {
+    top: 0.6rem;
+  }
+  .experience-company {
+    grid-column: 1;
+    grid-row: 1;
+    padding-left: 0;
+  }
+  .experience-time {
+    grid-column: 2;
+    grid-row: 1;
+  }
   .experience-title {
-    order: 1;
-    flex-basis: 100%;
+    grid-column: 1 / -1;
+    grid-row: 2;
     margin-right: 0;
+  }
+  .experience-position .sub-list {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+  .experience-position--earlier .sub-list {
+    padding-left: 0;
+  }
+  .experience-earlier-heading {
+    margin-left: 2rem;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .layout {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto 1fr;
+    grid-template-rows: auto auto auto 1fr auto;
     grid-template-areas:
       "header"
       "contact"
       "experience"
-      "oss";
+      "oss"
+      "edu";
+  }
+
+  .header {
+    padding-bottom: 0.5rem;
   }
 
   .sidebar-contact {
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-top: 0;
+  }
+
+  .sidebar-contact-list li,
+  .sidebar-contact-list li a {
+    justify-content: flex-start;
   }
 
   .github-prefix {
     display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .experience-time,
+  .experience-position--earlier .experience-time {
+    font-size: 0.8rem;
   }
 }
 
@@ -421,10 +650,6 @@ li {
 
   .sidebar {
     flex: 0 0 36%;
-  }
-
-  .header-summary {
-    display: block;
   }
 
   .layout [data-test-name="contact-pdf"] {
