@@ -10,3 +10,10 @@ This uses headless Chrome to write `resume.pdf`, and warns if the result is long
 The phone number is only included in the PDF, never in the published HTML. The script reads it from `$RESUME_PHONE` or from the first line of a gitignored `.phone` file, and leaves it out (with a warning) if neither is set.
 
 Or from any browser (without the phone number): File > Print > Save as PDF (with headers and footers turned off).
+
+# Update Open Source stats
+```sh
+./update-stats.py
+```
+
+Refreshes the weekly npm downloads and GitHub stars shown in the Open Source list. Set `GITHUB_TOKEN` if you hit GitHub's rate limit. Run it before `./print-pdf.sh` so the PDF has current numbers.
